@@ -1,31 +1,25 @@
 ---
-import FeaturedProjectsClient from "./FeaturedProjects.jsx";
-import { proyectos } from "../../../data/projectData.js";
-
-const featuredTitles = ["Instant Karaoke", "Aggie Class Alert", "Maroon Rides", "HPC Runner"];
-const featuredPool = featuredTitles
-  .map((title) => proyectos.find((p) => p.titulo === title))
-  .filter(Boolean);
+import GitHubProjects from "../../project/GitHubProjects.jsx";
 ---
 
 <div class="animate-fadeInUp stagger-5 mt-16 w-full max-w-6xl mx-auto px-4 min-w-0">
   <h2
     class="text-4xl font-bold flex flex-col items-center gap-6 text-center whitespace-nowrap text-[#38bdf8] md:flex-row md:items-center md:text-start mb-6"
   >
-    <span>Featured Projects</span>
+    <span>Projects</span>
     <span
       class="hidden h-1 grow rounded-lg bg-gradient-to-r from-[#1e293b] to-[#38bdf8]/30 md:block"
     ></span>
   </h2>
-  
-  <FeaturedProjectsClient client:load pool={featuredPool} />
+
+  <GitHubProjects client:load />
   
   <div class="flex justify-center mt-6">
     <a
       href="/projects"
       class="group inline-flex items-center gap-2 px-5 py-2.5 border border-[#38bdf8]/30 text-[#38bdf8] font-semibold rounded-xl transition-all duration-300 hover:bg-[#38bdf8]/10 hover:border-[#38bdf8]/50"
     >
-      View All Projects
+      Open Projects Page
       <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
       </svg>

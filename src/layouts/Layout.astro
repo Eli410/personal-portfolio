@@ -56,6 +56,16 @@ const pageDescription = description || "Software Engineer & Computer Engineering
           }
           requestAnimationFrame(function () {
             void document.documentElement.offsetHeight;
+
+            const hash = window.location.hash;
+            if (hash) {
+              const target = document.getElementById(hash.slice(1));
+              if (target) {
+                target.scrollIntoView({ block: "start" });
+                return;
+              }
+            }
+
             window.scrollTo(0, 0);
           });
         }

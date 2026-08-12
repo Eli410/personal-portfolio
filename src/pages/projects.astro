@@ -2,58 +2,13 @@
 import "../styles/projects.css";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/commons/hero/hero.astro";
-import ProjectSection from "../components/project/ProjectSection.astro";
-import { proyectos } from "../data/projectData.js";
+import GitHubProjects from "../components/project/GitHubProjects.jsx";
 ---
 
-<Layout title="Projects" description="Explore my projects and work">
+<Layout title="Projects" description="Live activity from Eli Chen's pinned GitHub projects">
   <Hero titulo="Projects" />
 
-  <main class="projects-page">
-    {
-      proyectos.map((proyecto, index) => (
-        <ProjectSection
-          index={index}
-          titulo={proyecto.titulo}
-          descripcion={proyecto.descripcion}
-          imagen={proyecto.imagen}
-          tecnologias={proyecto.tecnologias}
-          url={proyecto.url}
-          github={proyecto.github}
-          categoria={proyecto.categoria}
-          role={proyecto.role}
-          dateRange={proyecto.dateRange}
-          subtitle={proyecto.subtitle}
-        />
-      ))
-    }
-  </main>
+  <section class="projects-page" aria-label="Projects">
+    <GitHubProjects client:load />
+  </section>
 </Layout>
-
-<script is:inline>
-(function () {
-  function initReveal() {
-    const sections = document.querySelectorAll(".project-section");
-    if (!sections.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          }
-        });
-      },
-      {
-        rootMargin: "0px 0px -60px 0px",
-        threshold: 0.1,
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-  }
-
-  document.addEventListener("astro:page-load", initReveal);
-  window.addEventListener("load", initReveal);
-})();
-</script>

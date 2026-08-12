@@ -1,5 +1,16 @@
 export const jobs = [
   {
+    title: "Production Engineer - Applied Optoelectronics, Inc.",
+    logo: "aoi",
+    time: ["Jun 2026 - Present"],
+    description:
+      "Maintaining and automating production test systems for 800G OSFP optical transceivers.",
+    list: [
+      "Maintain a Python GUI and automated TP2/TP3 test framework for calibrating 800G OSFP optical transceivers",
+      "Automate eight-lane PAM4 measurement validation and troubleshoot software, instrument communication, and hardware failures to improve test repeatability and station uptime",
+    ],
+  },
+  {
     title: "Data Engineer Intern - Hexagon ALI",
     logo: "hexagon",
     time: ["May 2025 - Dec 2025"],

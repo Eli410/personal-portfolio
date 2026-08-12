@@ -46,9 +46,9 @@
     margin-bottom: 0;
     -webkit-overflow-scrolling: touch;
   }
-  .job-title button {
+  .job-title button.tabbutton {
     flex-shrink: 0;
-    padding: 10px;
+    padding: 10px 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,6 +63,11 @@
     width: 24px;
     height: 24px;
     object-fit: contain;
+  }
+  .job-title-icon .job-logo--wide {
+    width: 32px;
+    height: 24px;
+    border-radius: 3px;
   }
   .job-title button.active .job-title-icon {
     color: #fff;
@@ -147,6 +152,10 @@
   }
   .job-title-icon .job-logo {
     object-fit: contain;
+  }
+  .job-title-icon .job-logo--wide {
+    width: 28px;
+    border-radius: 3px;
   }
   .job-title-text {
     display: inline;

@@ -4,11 +4,12 @@ import "../../styles/experiencie.css";
 
 // Optimized logos (Astro will resize to 48×48 and optimize format at build)
 import { Image } from "astro:assets";
+import aoiLogo from "../../assets/logos/AOI_logo.png";
 import hexagonLogo from "../../assets/logos/Hexagon_logo.png";
 import shepherdLogo from "../../assets/logos/Shepherd_ventures_logo.png";
 import tamuLogo from "../../assets/logos/TAMU_logo.png";
 
-const logoMap = { hexagon: hexagonLogo, shepherd: shepherdLogo, tamu: tamuLogo };
+const logoMap = { aoi: aoiLogo, hexagon: hexagonLogo, shepherd: shepherdLogo, tamu: tamuLogo };
 
 // Data
 import { jobs } from "../../data/jobsData";
@@ -40,7 +41,13 @@ import { jobs } from "../../data/jobsData";
             >
               <span class="job-title-icon" aria-hidden="true">
                 {job.logo && logoMap[job.logo] ? (
-                  <Image src={logoMap[job.logo]} width={48} height={48} alt="" class="job-logo" />
+                  <Image
+                    src={logoMap[job.logo]}
+                    width={job.logo === "aoi" ? 64 : 48}
+                    height={job.logo === "aoi" ? 32 : 48}
+                    alt=""
+                    class={`job-logo ${job.logo === "aoi" ? "job-logo--wide" : ""}`}
+                  />
                 ) : (
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>

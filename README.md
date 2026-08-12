@@ -19,7 +19,7 @@ This portfolio showcases my work as a Software Engineer and Computer Engineering
 - Responsive design for mobile and desktop
 - Dark theme with maroon and gold accent colors
 - Animated hero section with typewriter effect
-- Filterable project gallery
+- Live cards for every project pinned on GitHub
 - Interactive FAQ accordions
 - Smooth page transitions
 
@@ -74,6 +74,16 @@ src/
 ├── scripts/            # JavaScript utilities
 └── styles/             # Global CSS styles
 ```
+
+### Live GitHub projects
+
+The homepage and Projects page discover the repositories pinned on
+[github.com/Eli410](https://github.com/Eli410), then enrich each card with live
+repository metadata from GitHub. Results are cached in the visitor's browser for
+15 minutes to keep the section fast and stay within GitHub's public API limits.
+A minimal snapshot of the current pin names keeps the cards available if the
+pin-discovery service is temporarily unreachable; the interface labels that
+state instead of presenting it as live.
 
 ## Contact
 
